@@ -36,6 +36,7 @@ class Game:
         self. guesses = {" "}
         self.phrase_instance = Phrase(list(self.active_phrase), self)
     
+
     def welcome(self):
         print("Welcome to this wacky game of wacky guesses")
         print(f"There are currently {len(self.phrases)} phrases in this game")
@@ -58,7 +59,6 @@ class Game:
                 self.phrases.append(new_phrase)
         else:
             print("Ok, lets start the game, please see below the phrase you will have to guess:")
-            
 
 
     def start(self):
@@ -69,6 +69,9 @@ class Game:
             self.phrase_instance.display()
             print(f"You currently have {missed} missed guesses")
             user_guess = self.get_guess()
+            if not user_guess.isalpha():
+                print("please enter a letter")
+                continue
             self.guesses.add(user_guess)
             print(f"User's guess: {user_guess}")
             if user_guess not in self.active_phrase:
@@ -105,12 +108,10 @@ class Game:
                         print("Oh, you made the panda cry, we now have a sad panda. Well, hope you still enjoy your day :)")
                         guess_phrase = True  
 
+
     def get_guess(self):
         user_guess = input ("lets hear your guess: ").lower()
         return user_guess
-
-
-
 
 
 

@@ -70,7 +70,7 @@ class Game:
             print(f"You currently have {missed} missed guesses")
             user_guess = self.get_guess()
             if not user_guess.isalpha():
-                print("please enter a letter")
+                print("Please enter a letter so we can try again")
                 continue
             self.guesses.add(user_guess)
             print(f"User's guess: {user_guess}")

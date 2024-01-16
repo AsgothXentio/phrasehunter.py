@@ -13,7 +13,7 @@ class Phrase:
                 print(" ", end=" ")
             else:
                 print("_", end=" ")
-        print()  # Add a newline after displaying the phrase
+        print()
 
 
 
